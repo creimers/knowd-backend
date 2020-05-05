@@ -1,0 +1,33 @@
+Django>=2.2,<3
+
+django-filter
+django-cors-headers
+
+
+graphene-django
+django-graphql-jwt
+graphene_graphiql_explorer
+
+
+# REST
+djangorestframework
+djangorestframework-jwt
+
+# dev
+ipdb
+
+gunicorn
+psycopg2-binary
+
+# testing
+pytest-django
+pytest-sugar
+pytest-instafail
+pytest-factoryboy
+factory-boy
+Faker
+pytest-cov
+
+
+celery
+
