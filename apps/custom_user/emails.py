@@ -18,14 +18,13 @@ def encode_uid(pk: int):
 
 
 
-@shared_task 
-def send_activation_email(user_id, request):
+@shared_task
+def send_activation_email(user_id):
     """
     send an email to the user containing an activation link
     """
-    user = UserModel.get(id=user_id)
-    site = get_current_site(request)
-    domain = getattr(settings, "DOMAIN", "") or site.domain
+    user = UserModel.objects.get(id=user_id)
+    domain = getattr(settings, "DOMAIN", "")  # or site.domain
 
     context = {}
     uid = encode_uid(user.pk)
@@ -44,15 +43,13 @@ def send_activation_email(user_id, request):
 
 
 
-@shared_task 
-def send_password_reset_email(user_id, request):
+@shared_task
+def send_password_reset_email(user_id):
     """
     send an email to the to reset the password
     """
-    user = UserModel.get(id=user_id)
-    site = get_current_site(request
-    )
-    domain = getattr(settings, "DOMAIN", "") or site.domain
+    user = UserModel.objects.get(id=user_id)
+    domain = getattr(settings, "DOMAIN", "")  # or site.domain
 
     context = {}
     uid = encode_uid(user.pk)
