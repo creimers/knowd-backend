@@ -8,6 +8,7 @@ graphene-django
 django-graphql-jwt
 graphene_graphiql_explorer
 
+django-taggit
 
 # REST
 djangorestframework
@@ -15,6 +16,9 @@ djangorestframework-jwt
 
 # dev
 ipdb
+pylint
+flake8
+black
 
 gunicorn
 psycopg2-binary

@@ -1,4 +1,3 @@
-
 from celery import shared_task
 
 from django.conf import settings
@@ -15,7 +14,6 @@ UserModel = get_user_model()
 
 def encode_uid(pk: int):
     return force_text(urlsafe_base64_encode(force_bytes(pk)))
-
 
 
 @shared_task
@@ -40,7 +38,6 @@ def send_activation_email(user_id):
 
     email = EmailMessage(subject, body, settings.DEFAULT_FROM_EMAIL, [user.email],)
     email.send()
-
 
 
 @shared_task

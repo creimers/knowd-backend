@@ -8,10 +8,8 @@ DJANGO_APPS = [
     "django.contrib.sites",
 ]
 
-THIRD_PARTY_APPS = [
-    "corsheaders",
-]
+THIRD_PARTY_APPS = ["corsheaders", "taggit"]
 
-LOCAL_APPS = ["apps.custom_user"]
+LOCAL_APPS = ["apps.custom_user", "apps.knowd"]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
